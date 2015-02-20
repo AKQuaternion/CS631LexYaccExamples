@@ -7,9 +7,17 @@
 //
 
 #include <iostream>
+using std::cout;
+
+int yylex();
+
+extern "C" int yywrap()
+{
+    cout << "End of input\n";
+    return 1;
+}
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    yylex();
     return 0;
 }
