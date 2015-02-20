@@ -2,5 +2,12 @@
 #include <iostream>
 using std::cout;
 %}
+e (((ab|ba)(aa|bb)*(ab|ba))|aa|bb)*
+eaob ({e}b{e}|a{e}b{e}a)
+oaeb ({e}a{e}|b{e}a{e}b)
 %%
-a* cout << "#";
+^{e}$ cout << "Even as and bs";
+^{eaob}$ cout << "Even as, odd bs";
+^{oaeb}$ cout << "odd as, even bs";
+^(a{eaob}|b{oaeb})$ cout << "odd as, odd bs";
+.*  cout << "none";
