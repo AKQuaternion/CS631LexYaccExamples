@@ -4,6 +4,7 @@
 #include <iostream>
 using std::cout;
 %}
+nov [^aeiou]*
 %%
-.*a.*e.*i.*o.*u.*\n ECHO;
+{nov}a{nov}e{nov}i{nov}o{nov}u{nov}\n ECHO;
 ^.*\n ;
