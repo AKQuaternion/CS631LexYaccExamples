@@ -26,10 +26,7 @@ extern "C" int yywrap()
 
 int main(int argc, const char * argv[]) {
     
-    ifstream infile("/usr/share/dict/words");
-    assert(infile);
-    
     unique_ptr<FlexLexer> lexer{make_unique<yyFlexLexer>()};
     
-    lexer->yylex(&infile);
+    lexer->yylex();
 }

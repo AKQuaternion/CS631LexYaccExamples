@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49F3B8DD1A96C03400705F2B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B8DC1A96C03400705F2B /* main.cpp */; };
+		49F3B8E41A96C10000705F2B /* lex.lpp in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B8E31A96C10000705F2B /* lex.lpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		49F3B8D91A96C03400705F2B /* CS631Lex */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CS631Lex; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F3B8DC1A96C03400705F2B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		49F3B8E31A96C10000705F2B /* lex.lpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = lex.lpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				49F3B8DC1A96C03400705F2B /* main.cpp */,
+				49F3B8E31A96C10000705F2B /* lex.lpp */,
 			);
 			path = CS631Lex;
 			sourceTree = "<group>";
@@ -118,6 +121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F3B8E41A96C10000705F2B /* lex.lpp in Sources */,
 				49F3B8DD1A96C03400705F2B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +206,7 @@
 		49F3B8E11A96C03400705F2B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -209,6 +214,7 @@
 		49F3B8E21A96C03400705F2B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

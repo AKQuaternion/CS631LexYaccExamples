@@ -4,7 +4,9 @@
 #include <iostream>
 using std::cout;
 %}
+f   ^foo
+b   bar$
 nov [^aeiou]*
 %%
-{nov}a{nov}e{nov}i{nov}o{nov}u{nov}\n ECHO;
-^.*\n ;
+{f}|{b} cout << "Yes";
+
