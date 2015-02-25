@@ -1,12 +1,19 @@
-%option c++
 %option noyywrap
+%x comment
 %{
 #include <iostream>
+#include "y.tab.h"
+#pragma clang diagnostic ignored "-Wdeprecated-register"
 using std::cout;
+int statementNumber=1;
 %}
-f   ^foo
-b   bar$
-nov [^aeiou]*
-%%
-{f}|{b} cout << "Yes";
 
+%%
+stmt    {yylval = statementNumber++; return STMT;}
+if      return IF;
+while   return WHILE;
+true    {yylval = 1; return EXPR;}
+false   {yylval = 0; return EXPR;}
+[;(){}] return *yytext;
+[ \t\n] ;
+%%

@@ -8,15 +8,12 @@
 
 #include <iostream>
 using std::cout;
-#include <memory>
-using std::unique_ptr;
-using std::make_unique;
-#include <FlexLexer.h>
 #include <fstream>
 using std::ifstream;
 #include <cassert>
+//extern int yydebug;
 
-int yylex();
+int yyparse();
 
 extern "C" int yywrap()
 {
@@ -25,8 +22,6 @@ extern "C" int yywrap()
 }
 
 int main(int argc, const char * argv[]) {
-    
-    unique_ptr<FlexLexer> lexer{make_unique<yyFlexLexer>()};
-    
-    lexer->yylex();
+//    yydebug = true;
+    yyparse();
 }

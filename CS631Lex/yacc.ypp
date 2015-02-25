@@ -1,0 +1,29 @@
+%{
+#include <iostream>
+using std::cout;
+using std::endl;
+#include <exception>
+int yylex();
+int yyerror(const char *s);
+%}
+%token IF WHILE EXPR STMT
+%%
+program : stmtlist {cout << $1 << endl;}
+
+stmtlist : stmtlist stmt { $$ = 10*$1+$2;}
+         | {$$ = 0;}
+         ;
+
+stmt : STMT ';' {$$ = $1;}
+| ifstmt {$$ = $1;}
+;
+
+ifstmt : IF '(' EXPR ')' stmt { if($3) $$ = $5; else $$=0;}
+        | IF '(' EXPR ')' '{' stmtlist '}' {if($3) $$ = $6; else $$=0;}
+        ;
+
+%%
+int yyerror(const char *s)
+{
+    throw std::runtime_error(s);
+}
